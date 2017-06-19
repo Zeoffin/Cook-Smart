@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@drawable/background_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="lv.digitalteam.android.gatavogudri.TimerActivity">
+
+    <TextView
+            android:text="00:30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" android:id="@+id/timerTextView" android:textColor="#000000"
+            android:textStyle="normal|bold" android:textSize="70sp"/>
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerSeekBar"
+            android:layout_above="@+id/timerTextView" android:layout_alignParentStart="true"
+            android:layout_marginBottom="50dp"/>
+    <Button
+            android:text="go!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerButton"
+            android:textStyle="normal|bold" android:textSize="18sp" android:textAlignment="center"
+            android:background="#A6FFFFFF"
+            android:layout_below="@+id/timerTextView" android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+    <Button
+            android:text="@string/soft_boiled_egg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/softEggTimer"
+            android:textSize="12sp" android:textAlignment="center"
+            android:background="#A6FFFFFF"
+            android:layout_alignBaseline="@+id/hardEggTimer" android:layout_alignBottom="@+id/hardEggTimer"
+            android:layout_toStartOf="@+id/hardEggTimer"/>
+    <Button
+            android:text="@string/hard_boiled_egg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hardEggTimer"
+            android:textSize="12sp" android:textAlignment="center"
+            android:background="#A6FFFFFF"
+            android:layout_marginTop="40dp" android:layout_below="@+id/timerButton"
+            android:layout_alignEnd="@+id/timerTextView" android:layout_marginLeft="5dp" android:paddingLeft="5dp"
+    />
+</RelativeLayout>

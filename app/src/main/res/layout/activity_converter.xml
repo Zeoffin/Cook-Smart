@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:background="@drawable/background_image"
+                android:layout_height="match_parent"
+                tools:context="lv.digitalteam.android.gatavogudri.ConverterActivity" android:id="@+id/productSpinnerLayout">
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:id="@+id/innerProductSpinnerLayout"
+            android:layout_height="match_parent" android:layout_centerVertical="true" android:layout_alignParentStart="true">
+        <TextView
+                android:text="glass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/typeGlass" android:textAlignment="center"
+                android:textColor="#000000" android:textSize="18sp"
+                android:textStyle="normal|bold" android:textAllCaps="true"
+                android:layout_below="@+id/defineValue" android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp" android:layout_marginTop="10dp"/>
+        <TextView
+                android:text="table spoon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/typeTablespoon" android:textAlignment="center"
+                android:textStyle="normal|bold" android:textColor="#000000" android:textSize="18sp"
+                android:textAllCaps="true"
+                android:layout_below="@+id/typeGlass" android:layout_alignStart="@+id/typeGlass"
+                android:layout_marginBottom="30dp"/>
+        <TextView
+                android:text="Tējkarote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/typeTeaspoon" android:textAlignment="center"
+                android:textStyle="normal|bold" android:textColor="#000000" android:textSize="18sp"
+                android:textAllCaps="true"
+                android:layout_below="@+id/typeTablespoon"
+                android:layout_alignStart="@+id/typeTablespoon"/>
+        <TextView
+                android:text="@string/default_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_below="@+id/productSpinner"
+                android:layout_centerHorizontal="true" android:id="@+id/defineValue" android:textColor="#000000"
+                android:textSize="30sp" android:layout_marginTop="20dp" android:layout_marginBottom="20dp"/>
+        <Button
+                android:text="@string/convert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/convertButton"
+                android:background="#A6FFFFFF"
+                android:layout_below="@+id/valueInput"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:layout_marginTop="40dp"
+                android:id="@+id/valueInput"
+                android:layout_below="@+id/typeTeaspoon" android:layout_centerHorizontal="true"
+                android:hint="@string/enter_your_value_in_grams"/>
+        <Spinner
+                android:id="@+id/productSpinner"
+                android:layout_height="50dp" android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" android:layout_width="200dp" android:layout_marginTop="20dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>

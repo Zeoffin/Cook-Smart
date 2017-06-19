@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Cuisinez intelligemment!</string>
+
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
+
+    <!-- Navigation -->
+    <string name="grocery_list">Liste de Courses</string>
+    <string name="converter">Convertisseur</string>
+    <string name="recipes">Recettes</string>
+    <string name="timer">Minuteur</string>
+    <string name="tools">Outils</string>
+    <string name="settings">Paramètres</string>
+    <string name="info">Information</string>
+
+    <!-- Starting fragment -->
+    <string name="on_table_title">Bienvenue!</string>
+    <string name="to_start_choose_from_left_side_menu">Pour commencer, faites votre choix dans le menu à gauche!</string>
+
+    <!-- For converter -->
+    <string name="table_spoon">"Cuillère à soupe"</string>
+    <string name="glass">"Verre (250ml)"</string>
+    <string name="tea_spoon">"Petite cuillère"</string>
+    <string name="grams">" gramme"</string>
+    <string name="grams_are">" grammes sont:"</string>
+    <string name="enter_value">Entrez la valeur!</string>
+    <string name="default_value">Quantité d\'\ingrédient:</string>
+    <string name="convert">Convertir!</string>
+    <string name="enter_your_value_in_grams">Entrez la valeur en grammes!</string>
+
+    <!-- Timer fragment -->
+    <string name="timer_go">Commencer!</string>
+    <string name="timer_stop"> Arrêter!</string>
+    <string name="soft_boiled_egg">Œuf à la coque</string>
+    <string name="hard_boiled_egg">Œuf dur</string>
+    <string name="timer_has_finished"> La minuterie est terminée!</string>
+
+    <!-- Groceries list -->
+    <string name="enter_your_item">Entrez votre article!</string>
+    <string name="item_already_exists">L’article existe déjà dans la liste!</string>
+    <string name="hold_to_delete">Relire l’article. Maintenez la touche enfoncée pour supprimer!</string>
+    <string name="enter_your_item_here">Entrez votre article ici!</string>
+    <string name="add">Ajouter</string>
+
+    <!-- delete -->
+    <string name="no">Non</string>
+    <string name="yes">Oui</string>
+    <string name="do_you_want_to_delete">Voulez-vous supprimer cet article de votre liste?</string>
+    <string name="delete">Supprimer l’article</string>
+
+    <!-- Info -->
+    <string name="version">Version:</string>
+    <string name="version_number">1.1.0</string>
+    <string name="digital_team">Digital Team</string>
+    <string name="home_page">http://www.digitalteam.lv/</string>
+    <string name="developer_email">info@digitalteam.lv</string>
+    <string name="for_suggestions_and_or_comments">Les suggestions et/ou des commentaires:</string>
+    <string name="gatavogudri_gmail_com">gatavogudri@gmail.com</string>
+
+</resources>

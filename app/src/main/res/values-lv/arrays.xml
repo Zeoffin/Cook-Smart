@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="products_array">
+        <item>Cukurs</item>
+        <item>Pūdercukurs</item>
+        <item>Sāls</item>
+        <item>Soda</item>
+        <item>Kakao pulveris</item>
+        <item>Malta kafija</item>
+        <item>Medus</item>
+        <item>Tēja, beramā</item>
+        <item>Sinepes</item>
+        <item>Citronskābe</item>
+        <item>Kanēlis</item>
+    </string-array>
+
+</resources>

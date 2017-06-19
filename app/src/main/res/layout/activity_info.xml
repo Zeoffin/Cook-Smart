@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_image"
+                tools:context="lv.digitalteam.android.gatavogudri.InfoActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoDeveloper"
+            android:layout_centerVertical="true" android:layout_centerHorizontal="true">
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoVersion"
+            android:layout_below="@+id/infoDeveloper" android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp">
+    </LinearLayout>
+
+    <TextView
+            android:text="@string/for_suggestions_and_or_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/suggestions" android:textColor="#000000"
+            android:textStyle="normal|bold" android:textAlignment="center" android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" android:layout_marginBottom="5dp" android:textSize="18sp"/>
+
+    <TextView
+            android:text="@string/gatavogudri_gmail_com"
+            android:layout_width="wrap_content"
+            android:autoLink="email"
+            android:textColorLink="#a36900"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoEmail2"
+            android:layout_below="@+id/suggestions" android:layout_centerHorizontal="true" android:textSize="18sp"/>
+
+    <TextView
+            android:text="@string/developer_email"
+            android:layout_width="match_parent"
+            android:autoLink="email"
+            android:layout_height="wrap_content" android:id="@+id/infoEmail" android:textColor="#000000"
+            android:textSize="18sp" android:textColorLink="#a36900"
+            android:textAlignment="center"
+            android:layout_above="@+id/suggestions" android:layout_alignParentStart="true"
+            android:layout_marginBottom="50dp"/>
+
+    <TextView
+            android:text="@string/home_page"
+            android:autoLink="web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/infoHomePage" android:textColor="#000000"
+            android:textSize="18sp" android:paddingBottom="5dp" android:textColorLink="#a36900"
+            android:textAlignment="center"
+            android:layout_above="@+id/infoEmail" android:layout_alignParentStart="true"/>
+
+    <TextView
+            android:text="@string/digital_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/infoName" android:textColor="#000000"
+            android:textAlignment="center" android:textSize="24sp" android:paddingBottom="5dp"
+            android:textStyle="normal|bold"
+            android:layout_above="@+id/infoHomePage" android:layout_alignParentStart="true"/>
+
+    <TextView
+            android:text="@string/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/infoVersion1" android:textColor="#000000"
+            android:textSize="18sp" android:textAlignment="center" android:textStyle="normal|bold"
+            android:layout_below="@+id/infoVersion" android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"/>
+
+    <TextView
+            android:text="@string/version_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/infoVersion2" android:textColor="#000000"
+            android:textAlignment="center" android:textSize="18sp"
+            android:layout_below="@+id/infoVersion1" android:layout_alignParentStart="true"/>
+</RelativeLayout>

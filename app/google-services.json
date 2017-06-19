@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "1077828033667",
+    "firebase_url": "https://digital-team-latvia.firebaseio.com",
+    "project_id": "digital-team-latvia",
+    "storage_bucket": "digital-team-latvia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077828033667:android:897cf1da3666dd48",
+        "android_client_info": {
+          "package_name": "lv.digitalteam.android.gatavogudri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077828033667-792htep6crlpjej2gc6pfmo4abrnsts6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lv.digitalteam.android.gatavogudri",
+            "certificate_hash": "a4ce82b5f5968d82bd7ec7eb97badc0f11f62657"
+          }
+        },
+        {
+          "client_id": "1077828033667-1o6dtg0f6vei4jussrp1k8j6m8mr3s43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyMaxUt3BS5ajSz5N6odRt32RMdNlQIdI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077828033667-1o6dtg0f6vei4jussrp1k8j6m8mr3s43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077828033667:android:647564decdd37204",
+        "android_client_info": {
+          "package_name": "lv.digitalteam.android.instantsms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077828033667-1o6dtg0f6vei4jussrp1k8j6m8mr3s43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyMaxUt3BS5ajSz5N6odRt32RMdNlQIdI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

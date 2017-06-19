@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="products_array">
+        <item>Sucre</item>
+        <item>Sucre semoule</item>
+        <item>Sel</item>
+        <item>Soude</item>
+        <item>Poudre de cacao</item>
+        <item>Café moulu</item>
+        <item>Miel</item>
+        <item>Thé, feuille</item>
+        <item>Moutarde</item>
+        <item>Acide citrique</item>
+        <item>Cannelle</item>
+    </string-array>
+
+</resources>

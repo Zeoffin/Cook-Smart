@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:background="@drawable/background_image"
+                android:layout_height="match_parent"
+                tools:context="lv.digitalteam.android.gatavogudri.GroceryListActivity">
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/enterItemEditText"
+            android:layout_centerHorizontal="true" android:id="@+id/groceryListView"
+            android:layout_height="100dp">
+    </ListView>
+    <Button
+            android:text="@string/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#A6FFFFFF"
+            android:layout_marginBottom="8dp" android:id="@+id/addNewItem" android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/enterItemEditText"
+            android:maxLength="20"
+            android:hint="@string/enter_your_item_here" android:textColor="#000000"
+            android:layout_above="@+id/addNewItem" android:layout_centerHorizontal="true"/>
+</RelativeLayout>

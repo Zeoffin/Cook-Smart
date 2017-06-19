@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Gatavo gudri!</string>
+
+    <string name="navigation_drawer_open">Atvērt</string>
+    <string name="navigation_drawer_close">Aizvērt</string>
+
+    <!-- Navigation -->
+    <string name="grocery_list">Iepirkšanās saraksts</string>
+    <string name="converter">Konvertēšanas rīks</string>
+    <string name="recipes">Manas receptes</string>
+    <string name="timer">Taimeris</string>
+    <string name="tools">Rīki</string>
+    <string name="settings">Iestatījumi</string>
+    <string name="info">Informācija</string>
+
+    <!-- Starting fragment -->
+    <string name="on_table_title">Sveicināts atpakaļ!</string>
+    <string name="to_start_choose_from_left_side_menu">Lai sāktu, izvēlies no kreisās puses izvēlnes vai no apakšējām ikonām!</string>
+
+    <!-- For converter -->
+    <string name="table_spoon">"Ēdamkarote"</string>
+    <string name="glass">"Glāze (250ml)"</string>
+    <string name="tea_spoon">"Tējkarote"</string>
+    <string name="grams">" grami"</string>
+    <string name="grams_are">" grami ir:"</string>
+    <string name="enter_value">Ievadi vērtību gramos!</string>
+    <string name="default_value">Produkta vērtība:</string>
+    <string name="convert">Konvertēt!</string>
+    <string name="enter_your_value_in_grams">Ievadi vērtību gramos!</string>
+
+    <!-- Timer fragment -->
+    <string name="timer_go">Aiziet!</string>
+    <string name="timer_stop">Beigt!</string>
+    <string name="soft_boiled_egg">Mīksti vārīta \n ola</string>
+    <string name="hard_boiled_egg">Cieti vārīta \n ola</string>
+    <string name="timer_has_finished">Uzliktais laiks ir pagājis!</string>
+
+    <!-- Groceries list -->
+    <string name="enter_your_item">Ievadi pirkumu!</string>
+    <string name="item_already_exists">Ievadītais produkts jau eksistē sarakstā!</string>
+    <string name="hold_to_delete">Paraugs. Turi, lai izdzēstu!</string>
+    <string name="enter_your_item_here">Ievadi pirkumu šeit!</string>
+    <string name="add">Pievienot</string>
+
+    <!-- delete -->
+    <string name="no">Nē</string>
+    <string name="yes">Jā</string>
+    <string name="do_you_want_to_delete">Vai izdzēst šo pirkumu no saraksta?</string>
+    <string name="delete">Izdzēst</string>
+
+    <!-- Info -->
+    <string name="version">Versija:</string>
+    <string name="version_number">1.1.0</string>
+    <string name="digital_team">Digital Team</string>
+    <string name="home_page">http://www.digitalteam.lv/</string>
+    <string name="developer_email">info@digitalteam.lv</string>
+    <string name="for_suggestions_and_or_comments">Atsaucēm un ieteikumiem:</string>
+    <string name="gatavogudri_gmail_com">gatavogudri@gmail.com</string>
+
+</resources>
