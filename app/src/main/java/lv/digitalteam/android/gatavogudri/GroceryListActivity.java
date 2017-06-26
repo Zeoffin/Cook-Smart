@@ -1,10 +1,15 @@
 package lv.digitalteam.android.gatavogudri;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 
@@ -27,6 +32,13 @@ public class GroceryListActivity extends AppCompatActivity implements View.OnCli
         sharedPreferences = this.getSharedPreferences("lv.digitalteam.android.gatavogudri", MODE_PRIVATE);
         HashSet<String> set = new HashSet(groceries);
         sharedPreferences.edit().putStringSet("Groceries", set).apply();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_grocery_list, menu);
+        return true;
     }
 
     @Override
@@ -53,7 +65,6 @@ public class GroceryListActivity extends AppCompatActivity implements View.OnCli
             groceries = new ArrayList(set);
         }
 
-        //arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, groceries);
         arrayAdapter = new GroceryListAdapter(this, groceries);
         listView.setAdapter(arrayAdapter);
 
@@ -95,6 +106,7 @@ public class GroceryListActivity extends AppCompatActivity implements View.OnCli
 
     }
 
+    //Scroll list view to bottom
     private void scrollListViewToBottom() {
         listView.post(new Runnable() {
             @Override
@@ -137,6 +149,34 @@ public class GroceryListActivity extends AppCompatActivity implements View.OnCli
                 }
 
                 break;
+        }
+    }
+
+    //Share button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_share:
+
+                int i = 0;
+                StringBuilder intentGroceries = new StringBuilder();
+
+                for (String grocery : groceries) {
+                    i++;
+                    intentGroceries.append(i + ") " + grocery).append(", \n");
+                }
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.grocery_list) + ": \n" + intentGroceries);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, "Share with.."));
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 

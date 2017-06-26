@@ -12,6 +12,7 @@
             android:layout_centerHorizontal="true" android:id="@+id/groceryListView"
             android:layout_height="100dp">
     </ListView>
+
     <Button
             android:text="@string/add"
             android:layout_width="wrap_content"
@@ -19,10 +20,11 @@
             android:background="#A6FFFFFF"
             android:layout_marginBottom="8dp" android:id="@+id/addNewItem" android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
+
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textCapSentences"
             android:ems="10"
             android:id="@+id/enterItemEditText"
             android:maxLength="20"

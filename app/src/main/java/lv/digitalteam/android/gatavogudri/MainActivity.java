@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         adView.loadAd(adRequest);
 
         //Start-menu
-        String toolNames[] = {getString(R.string.converter), getString(R.string.grocery_list), getString(R.string.timer), getString(R.string.info)};
-        int toolIcons[] = {R.drawable.ic_compare_arrows_black_24dp, R.drawable.ic_shopping_cart_black_24dp, R.drawable.ic_alarm_black_24dp, R.drawable.ic_info_black_24dp};
+        String toolNames[] = {getString(R.string.converter), getString(R.string.grocery_list), getString(R.string.timer), getString(R.string.recipes), getString(R.string.info)};
+        int toolIcons[] = {R.drawable.ic_compare_arrows_black_24dp, R.drawable.ic_shopping_cart_black_24dp, R.drawable.ic_alarm_black_24dp, R.drawable.ic_cake_black_24dp, R.drawable.ic_info_black_24dp};
 
         listView = (ListView) findViewById(R.id.menuListView);
 
@@ -57,7 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
 
-                    case 3: Intent info = new Intent(getApplicationContext(), InfoActivity.class);
+                    case 3: Intent recipes = new Intent(getApplicationContext(), RecipesActivity.class);
+                        startActivity(recipes);
+
+                        break;
+
+                    case 4: Intent info = new Intent(getApplicationContext(), InfoActivity.class);
                         startActivity(info);
 
                         break;

@@ -2,6 +2,7 @@ package lv.digitalteam.android.gatavogudri;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -24,8 +25,10 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
     CountDownTimer countDownTimer;
     Button hardEggTimer;
     Button softEggTimer;
+    NotificationManager notificationManager;
 
     public void updateTimer(int secondsLeft) {
+
         int minutes = (int) secondsLeft / 60; // (int) noapaļo, lai nebūtu decimāldaļas
         int seconds = (int) secondsLeft - minutes*60; // - minutes*60 atņem sekundes, kuras jau ir INT MINUTES
 
@@ -50,6 +53,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
         //Display the time
         timerTextView.setText(toString + ":" + forZero);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +114,8 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                     hardEggTimer.setEnabled(false);
                     softEggTimer.setEnabled(false);
 
+                    notificationManager = (NotificationManager) TimerActivity.this.getSystemService(TimerActivity.this.NOTIFICATION_SERVICE);
+
                     countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000 + 100, 1000) {
 
                         @Override
@@ -134,7 +140,6 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                                 timerEnded.play();
 
                                 //Notification
-                                NotificationManager notificationManager = (NotificationManager) TimerActivity.this.getSystemService(TimerActivity.this.NOTIFICATION_SERVICE);
                                 Notification notif = new Notification.Builder(TimerActivity.this)
                                         .setContentTitle(getString(R.string.app_name))
                                         .setContentText(getString(R.string.timer_has_finished))
@@ -178,7 +183,9 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                 timerTextView.setText("03:00");
 
                 break;
+
         }
+
     }
 
 }
