@@ -82,7 +82,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_arrow_downward_black_24dp" />
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp" />
 
     </RelativeLayout>
 
