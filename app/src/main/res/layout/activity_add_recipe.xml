@@ -19,23 +19,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_done_white_48dp"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/addRecipes"/>
+                android:id="@+id/saveRecipes"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_keyboard_return_white_48dp"
                 android:layout_alignParentStart="true"
-                android:id="@+id/backRecipes"/>
+                android:id="@+id/backAddRecipes"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_share_white_48dp"
                 android:id="@+id/shareRecipes"
-                android:layout_alignParentTop="true" android:layout_toEndOf="@+id/backRecipes"
+                android:layout_alignParentTop="true" android:layout_toEndOf="@+id/backAddRecipes"
                 android:layout_marginLeft="50dp"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_delete_white_48dp"
                 android:id="@+id/deleteRecipes" android:layout_alignParentTop="true"
-                android:layout_toStartOf="@+id/addRecipes" android:layout_marginRight="50dp"/>
+                android:layout_toStartOf="@+id/saveRecipes" android:layout_marginRight="50dp"/>
 
     </RelativeLayout>
 
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:inputType="textCapSentences"
             android:ems="10"
-            android:background="@drawable/converter_border"
+            android:background="@drawable/add_recipe_border"
             android:maxLength="35"
             android:id="@+id/addRecipeTitle"
             android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
@@ -53,7 +53,7 @@
             android:layout_height="50dp"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:background="@drawable/converter_border"
+            android:background="@drawable/add_recipe_border"
             android:maxLength="100"
             android:layout_below="@+id/addRecipeTitle" android:layout_centerHorizontal="true"
             android:id="@+id/addRecipeDesc" android:hint="Write a short description!" android:textColor="#000000"
@@ -61,7 +61,7 @@
     <EditText
             android:layout_height="100dp"
             android:inputType="textMultiLine"
-            android:background="@drawable/converter_border"
+            android:background="@drawable/add_recipe_border"
             android:ems="10"
             android:layout_below="@+id/addRecipeDesc" android:layout_centerHorizontal="true"
             android:id="@+id/addRecipeIngr" android:hint="Ingredients"
@@ -69,7 +69,7 @@
     <EditText
             android:layout_height="100dp"
             android:inputType="textMultiLine"
-            android:background="@drawable/converter_border"
+            android:background="@drawable/add_recipe_border"
             android:ems="10"
             android:layout_below="@+id/addRecipeIngr" android:layout_centerHorizontal="true"
             android:id="@+id/addRecipePrep" android:hint="Preparation" android:layout_marginTop="15dp"
@@ -78,17 +78,14 @@
             app:srcCompat="@drawable/ic_perm_media_black_36dp"
             android:id="@+id/addRecipeImage"
             android:layout_marginLeft="60dp"
-            android:layout_width="70dp" android:layout_height="70dp" android:layout_below="@+id/addRecipePrep"
-            android:layout_alignStart="@+id/addRecipePrep" android:layout_marginTop="20dp"/>
-    <TextView
-            android:text="Click to add \n an picture!"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/addRecipeAddImg" android:textColor="#000000"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            android:layout_alignTop="@+id/addRecipeImage" android:layout_toEndOf="@+id/addRecipeImage"
+            android:layout_width="70dp" android:layout_height="70dp"
+            android:layout_below="@+id/addRecipePrep" android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"/>
+    <TextView
+            android:text="Add picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_below="@+id/addRecipeImage"
+            android:layout_centerHorizontal="true" android:id="@+id/addRecipePictureText"/>
 
 
 </RelativeLayout>

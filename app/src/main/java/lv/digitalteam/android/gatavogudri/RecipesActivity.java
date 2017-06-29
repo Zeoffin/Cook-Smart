@@ -19,7 +19,11 @@ public class RecipesActivity extends AppCompatActivity {
     vai
     GOOGLE: Android button clicked effect
 
+    TODO: SATAISIT FILTRĒSANU
+
     */
+
+
 
     ImageView backRecipes;
     ImageView filterRecipes;
@@ -55,8 +59,8 @@ public class RecipesActivity extends AppCompatActivity {
         baseAdapter = new RecipesAdapter(this, recipeTitle, recipeDesc, recipeImage);
         recipesList.setAdapter(baseAdapter);
 
-        addRecipes = (ImageView) findViewById(R.id.addRecipes);
-        backRecipes = (ImageView) findViewById(R.id.backRecipes);
+        addRecipes = (ImageView) findViewById(R.id.saveRecipes);
+        backRecipes = (ImageView) findViewById(R.id.backAddRecipes);
         filterRecipes = (ImageView) findViewById(R.id.filterRecipes);
 
         addRecipes.setOnClickListener(new View.OnClickListener() {
