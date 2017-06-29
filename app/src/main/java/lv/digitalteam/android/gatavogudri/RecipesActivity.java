@@ -21,7 +21,7 @@ public class RecipesActivity extends AppCompatActivity {
 
     */
 
-    ImageView shareRecipes;
+    ImageView backRecipes;
     ImageView filterRecipes;
     ImageView addRecipes;
 
@@ -56,7 +56,7 @@ public class RecipesActivity extends AppCompatActivity {
         recipesList.setAdapter(baseAdapter);
 
         addRecipes = (ImageView) findViewById(R.id.addRecipes);
-        shareRecipes = (ImageView) findViewById(R.id.shareRecipes);
+        backRecipes = (ImageView) findViewById(R.id.backRecipes);
         filterRecipes = (ImageView) findViewById(R.id.filterRecipes);
 
         addRecipes.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +65,15 @@ public class RecipesActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
                 startActivity(intent);
+
+            }
+        });
+
+        backRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
 
             }
         });
