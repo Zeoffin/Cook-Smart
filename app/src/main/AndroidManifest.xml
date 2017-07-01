@@ -3,6 +3,8 @@
           package="lv.digitalteam.android.gatavogudri">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"/>
 
     <application
             android:allowBackup="true"
@@ -14,7 +16,7 @@
                 android:name=".MainActivity"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
-            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -25,33 +27,35 @@
                 android:name=".ConverterActivity"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
-            >
+
         </activity>
         <activity
                 android:name=".GroceryListActivity"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
-            >
+
         </activity>
         <activity
                 android:name=".TimerActivity"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
-            >
+
         </activity>
         <activity
                 android:name=".InfoActivity"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
-            >
+
         </activity>
         <activity
                 android:name=".RecipesActivity"
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="portrait">
-            >
+
         </activity>
-        <activity android:name=".AddRecipeActivity">
+        <activity android:name=".AddRecipeActivity"
+                  android:configChanges="orientation|keyboardHidden"
+                  android:screenOrientation="portrait">
         </activity>
     </application>
 

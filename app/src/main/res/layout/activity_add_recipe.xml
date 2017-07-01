@@ -30,12 +30,13 @@
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_share_white_48dp"
                 android:id="@+id/shareRecipes"
                 android:layout_alignParentTop="true" android:layout_toEndOf="@+id/backAddRecipes"
-                android:layout_marginLeft="50dp"/>
+                android:layout_marginLeft="50dp" android:visibility="invisible"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_delete_white_48dp"
                 android:id="@+id/deleteRecipes" android:layout_alignParentTop="true"
-                android:layout_toStartOf="@+id/saveRecipes" android:layout_marginRight="50dp"/>
+                android:layout_toStartOf="@+id/saveRecipes" android:layout_marginRight="50dp"
+                android:visibility="invisible"/>
 
     </RelativeLayout>
 
@@ -74,18 +75,18 @@
             android:layout_below="@+id/addRecipeIngr" android:layout_centerHorizontal="true"
             android:id="@+id/addRecipePrep" android:hint="Preparation" android:layout_marginTop="15dp"
             android:layout_width="340dp"/>
-    <ImageView
-            app:srcCompat="@drawable/ic_perm_media_black_36dp"
-            android:id="@+id/addRecipeImage"
-            android:layout_marginLeft="60dp"
-            android:layout_width="70dp" android:layout_height="70dp"
-            android:layout_below="@+id/addRecipePrep" android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"/>
     <TextView
-            android:text="Add picture"
+            android:text="Select picture from gallery"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_below="@+id/addRecipeImage"
-            android:layout_centerHorizontal="true" android:id="@+id/addRecipePictureText"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/addRecipePictureText"
+            android:layout_above="@+id/downMenuRecipes" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"/>
+    <ImageView
+            app:srcCompat="@drawable/ic_add_to_photos_black_24dp"
+            android:id="@+id/addRecipeImage"
+            android:layout_width="50dp" android:layout_height="50dp"
+            android:layout_above="@+id/addRecipePictureText" android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>
