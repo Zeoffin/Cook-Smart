@@ -1,9 +1,12 @@
 package lv.digitalteam.android.gatavogudri;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -26,15 +29,16 @@ public class RecipesActivity extends AppCompatActivity {
 
 
     ImageView backRecipes;
-    ImageView filterRecipes;
     ImageView addRecipes;
+    RecipesDBManager dbManager;
 
     BaseAdapter baseAdapter;
     ListView recipesList;
 
+    ArrayList<String> recipeId = new ArrayList<>();
     ArrayList<String> recipeTitle = new ArrayList<>();
     ArrayList<String> recipeDesc = new ArrayList<>();
-    ArrayList<Integer> recipeImage = new ArrayList<>();
+    ArrayList<Bitmap> recipeImage = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +47,11 @@ public class RecipesActivity extends AppCompatActivity {
 
         recipesList = (ListView) findViewById(R.id.recipesList);
 
-        //TODO: REMOVE TEST
-        recipeTitle.add("Zemeņu kūka");
-        recipeTitle.add("Torte 'Cielaviņa'");
+        dbManager = new RecipesDBManager(this);
 
-        recipeDesc.add("dfgsdsafgfds gsdf  dfsgsdfgsdfgser g43 gse5r gr gser gsfdg ");
-        recipeDesc.add("dfgsdsafgfds gsew 4t ert ser srdt43 gerdg  as e5r gr gser gsfdg ");
+        DbBitmapUtility dbBitmapUtility = new DbBitmapUtility();
 
-        recipeImage.add(R.drawable.kuka1);
-        recipeImage.add(R.drawable.kuka2);
-
-        //--------------------------------UPPER TESTING------------------------------------------
+        Cursor cursor = dbManager.getAll();
 
         //Adapter
         baseAdapter = new RecipesAdapter(this, recipeTitle, recipeDesc, recipeImage);
@@ -61,8 +59,31 @@ public class RecipesActivity extends AppCompatActivity {
 
         addRecipes = (ImageView) findViewById(R.id.saveRecipes);
         backRecipes = (ImageView) findViewById(R.id.backAddRecipes);
-        filterRecipes = (ImageView) findViewById(R.id.filterRecipes);
 
+        //Add from database
+        while (cursor.moveToNext()) {
+
+            recipeId.add(cursor.getString(cursor.getColumnIndex("id")));
+            recipeTitle.add(cursor.getString(cursor.getColumnIndex("title")));
+            recipeDesc.add(cursor.getString(cursor.getColumnIndex("description")));
+            recipeImage.add(dbBitmapUtility.getImage(cursor.getBlob(cursor.getColumnIndex("image"))));
+
+        }
+
+        //Update recipe
+        recipesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                //TODO: UPDATE
+
+                Intent intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //Add a new recipe
         addRecipes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +94,7 @@ public class RecipesActivity extends AppCompatActivity {
             }
         });
 
+        //Back button
         backRecipes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,4 +106,14 @@ public class RecipesActivity extends AppCompatActivity {
 
     }
 
+
+    //Refresh listview
+    @Override
+    protected void onRestart() {
+
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+
+    }
 }

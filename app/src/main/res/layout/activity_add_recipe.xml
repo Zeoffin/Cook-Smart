@@ -48,7 +48,7 @@
             android:maxLength="35"
             android:id="@+id/addRecipeTitle"
             android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
-            android:hint="What's your recipe called?" android:textColor="#000000" android:textAllCaps="true"
+            android:hint="@string/what_s_your_recipe_called" android:textColor="#000000" android:textAllCaps="true"
             android:textSize="24sp" android:layout_marginTop="15dp" android:layout_width="340dp"/>
     <EditText
             android:layout_height="50dp"
@@ -57,7 +57,7 @@
             android:background="@drawable/add_recipe_border"
             android:maxLength="100"
             android:layout_below="@+id/addRecipeTitle" android:layout_centerHorizontal="true"
-            android:id="@+id/addRecipeDesc" android:hint="Write a short description!" android:textColor="#000000"
+            android:id="@+id/addRecipeDesc" android:hint="@string/write_a_short_description" android:textColor="#000000"
             android:layout_marginTop="15dp" android:layout_width="340dp"/>
     <EditText
             android:layout_height="100dp"
@@ -65,7 +65,7 @@
             android:background="@drawable/add_recipe_border"
             android:ems="10"
             android:layout_below="@+id/addRecipeDesc" android:layout_centerHorizontal="true"
-            android:id="@+id/addRecipeIngr" android:hint="Ingredients"
+            android:id="@+id/addRecipeIngr" android:hint="@string/ingredients"
             android:textColor="#000000" android:layout_marginTop="15dp" android:layout_width="340dp"/>
     <EditText
             android:layout_height="100dp"
@@ -73,10 +73,10 @@
             android:background="@drawable/add_recipe_border"
             android:ems="10"
             android:layout_below="@+id/addRecipeIngr" android:layout_centerHorizontal="true"
-            android:id="@+id/addRecipePrep" android:hint="Preparation" android:layout_marginTop="15dp"
+            android:id="@+id/addRecipePrep" android:hint="@string/preparation" android:layout_marginTop="15dp"
             android:layout_width="340dp"/>
     <TextView
-            android:text="Select picture from gallery"
+            android:text="@string/select_picture_from_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/addRecipePictureText"

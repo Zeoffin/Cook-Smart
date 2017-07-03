@@ -57,5 +57,15 @@
     <string name="for_suggestions_and_or_comments">Les suggestions et/ou des commentaires:</string>
     <string name="gatavogudri_gmail_com">gatavogudri@gmail.com</string>
     <string name="share">Share</string>
+    <string name="select_picture_from_gallery">Select picture from gallery</string>
+    <string name="preparation">Preparation</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="write_a_short_description">Write a short description!</string>
+    <string name="what_s_your_recipe_called">What\'s your recipe called?</string>
+    <string name="select_image">Select image from gallery</string>
+    <string name="please_fill_all_fields">Please fill all fields!</string>
+    <string name="saved">Saved</string>
+    <string name="something_wrong">Something went wrong!</string>
+    <string name="error_occured">An error occured</string>
 
 </resources>

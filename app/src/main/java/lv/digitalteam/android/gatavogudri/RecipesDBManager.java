@@ -51,7 +51,7 @@ public class RecipesDBManager extends SQLiteOpenHelper {
 
 
     //Create a new data
-    public boolean newMessage(String title, String description, String ingredients, String preperations, byte[] image) {
+    public boolean newData(String title, String description, String ingredients, String preperations, byte[] image) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

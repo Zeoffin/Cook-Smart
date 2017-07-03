@@ -17,14 +17,9 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:background="@drawable/customborder"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" android:layout_height="50dp" android:id="@+id/downMenuRecipes">
+            android:layout_height="50dp" android:id="@+id/downMenuRecipes" android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
 
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_filter_list_white_48dp"
-                android:layout_centerVertical="true" android:layout_centerHorizontal="true"
-                android:id="@+id/filterRecipes"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/ic_add_white_48dp"

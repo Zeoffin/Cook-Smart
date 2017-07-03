@@ -2,6 +2,7 @@ package lv.digitalteam.android.gatavogudri;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +10,17 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 public class RecipesAdapter extends BaseAdapter {
 
     ArrayList<String> recipeTitle;
     ArrayList<String> recipeDesc;
-    ArrayList<Integer> recipeImage;
+    ArrayList<Bitmap> recipeImage;
     Context context;
 
-    public RecipesAdapter(Context context, ArrayList<String> recipeTitle, ArrayList<String> recipeDesc, ArrayList<Integer> recipeImage) {
+    public RecipesAdapter(Context context, ArrayList<String> recipeTitle, ArrayList<String> recipeDesc, ArrayList<Bitmap> recipeImage) {
 
         this.recipeTitle=recipeTitle;
         this.recipeDesc=recipeDesc;
@@ -58,7 +60,7 @@ public class RecipesAdapter extends BaseAdapter {
 
         recipesTitleList.setText(recipeTitle.get(i));
         recipesDescList.setText(recipeDesc.get(i));
-        recipesImageList.setImageResource(recipeImage.get(i));
+        recipesImageList.setImageBitmap(recipeImage.get(i));
 
         return view;
     }

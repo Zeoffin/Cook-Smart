@@ -21,6 +21,7 @@ public class AddRecipeActivity extends AppCompatActivity {
 
     Uri uri;
     Intent GalIntent, CropIntent;
+    RecipesDBManager recipesDBManager;
 
     ImageView backRecipes;
     ImageView shareRecipes;
@@ -39,6 +40,8 @@ public class AddRecipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
+
+        recipesDBManager = new RecipesDBManager(this);
 
         //Find and beyond (⊙⊙)(☉_☉)(⊙⊙)
         backRecipes = (ImageView) findViewById(R.id.backAddRecipes);
@@ -70,7 +73,7 @@ public class AddRecipeActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 GalIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(Intent.createChooser(GalIntent, "Select image from gallery"), 2);
+                startActivityForResult(Intent.createChooser(GalIntent, getString(R.string.select_image)), 2);
 
             }
         });
@@ -82,14 +85,36 @@ public class AddRecipeActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String titleField = addRecipeTitle.getText().toString();
-                String descField = addRecipeTitle.getText().toString();
-                String ingrField = addRecipeTitle.getText().toString();
-                String prepField = addRecipeTitle.getText().toString();
+                String descField = addRecipeDesc.getText().toString();
+                String ingrField = addRecipeIngr.getText().toString();
+                String prepField = addRecipePrep.getText().toString();
 
-                Bitmap bmp = GalIntent.getExtras().get("data");
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte[] byteArray = stream.toByteArray();
+                // convert image to bitmap
+                recipeImage.buildDrawingCache();
+                Bitmap img = recipeImage.getDrawingCache();
+
+                DbBitmapUtility dbBitmapUtility = new DbBitmapUtility();
+
+                if (titleField.equals("") || descField.equals("") || ingrField.equals("") || prepField.equals("")) {
+
+                    Toast.makeText(AddRecipeActivity.this, getString(R.string.please_fill_all_fields), Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    boolean inserted = recipesDBManager.newData(titleField, descField, ingrField, prepField, dbBitmapUtility.getBytes(img));
+
+                    if (inserted) {
+
+                        Toast.makeText(AddRecipeActivity.this, getString(R.string.saved), Toast.LENGTH_SHORT).show();
+                        finish();
+
+                    } else {
+
+                        Toast.makeText(AddRecipeActivity.this, getString(R.string.something_wrong), Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
 
             }
         });
@@ -137,8 +162,8 @@ public class AddRecipeActivity extends AppCompatActivity {
             CropIntent.putExtra("crop", "true");
             CropIntent.putExtra("outputX", 180);
             CropIntent.putExtra("outputY", 180);
-            CropIntent.putExtra("aspectX", 3);
-            CropIntent.putExtra("aspectY", 4);
+            CropIntent.putExtra("aspectX", 1);
+            CropIntent.putExtra("aspectY", 1);
             CropIntent.putExtra("scaleUpIfNeeded", true);
             CropIntent.putExtra("return-data", true);
 
@@ -146,7 +171,7 @@ public class AddRecipeActivity extends AppCompatActivity {
 
         } catch (ActivityNotFoundException e) {
 
-            Toast.makeText(this, "An error occured", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_occured), Toast.LENGTH_SHORT).show();
 
         }
 
