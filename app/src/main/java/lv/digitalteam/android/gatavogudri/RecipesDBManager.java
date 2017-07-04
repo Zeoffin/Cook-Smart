@@ -81,7 +81,7 @@ public class RecipesDBManager extends SQLiteOpenHelper {
 
 
     //To update
-    public boolean update(String id, String title, String description, String ingredients, String preperations, String image) {
+    public boolean update(String id, String title, String description, String ingredients, String preperations, byte[] image) {
 
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

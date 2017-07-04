@@ -50,22 +50,26 @@
 
     <!-- Info -->
     <string name="version">Versija:</string>
-    <string name="version_number">2.0.0</string>
+    <string name="version_number">2.0</string>
     <string name="digital_team">Digital Team</string>
     <string name="home_page">http://www.digitalteam.lv/</string>
     <string name="developer_email">info@digitalteam.lv</string>
     <string name="for_suggestions_and_or_comments">Atsaucēm un ieteikumiem:</string>
     <string name="gatavogudri_gmail_com">gatavogudri@gmail.com</string>
-    <string name="share">Share</string>
-    <string name="select_picture_from_gallery">Select picture from gallery</string>
-    <string name="preparation">Preparation</string>
-    <string name="ingredients">Ingredients</string>
-    <string name="write_a_short_description">Write a short description!</string>
-    <string name="what_s_your_recipe_called">What\'s your recipe called?</string>
-    <string name="select_image">Select image from gallery</string>
-    <string name="please_fill_all_fields">Please fill all fields!</string>
-    <string name="saved">Saved</string>
-    <string name="something_wrong">Something went wrong!</string>
-    <string name="error_occured">An error occured</string>
+
+    <!-- Recipes -->
+    <string name="share">Kopīgot</string>
+    <string name="select_picture_from_gallery">Izvēlies bildi no galerijas</string>
+    <string name="preparation">Pagatavošana</string>
+    <string name="ingredients">Sastāvdaļas</string>
+    <string name="write_a_short_description">Īss apraksts</string>
+    <string name="what_s_your_recipe_called">Receptes nosaukums</string>
+    <string name="select_image">Izvēlies attēlu no galerijas</string>
+    <string name="please_fill_all_fields">Lūdzu aizpildi visus laukus!</string>
+    <string name="saved">Saglabāts!</string>
+    <string name="something_wrong">Notika kļūda</string>
+    <string name="error_occured">Notika kļūda</string>
+    <string name="updated">Atjaunināts!</string>
+    <string name="deleted">Izdzēsts!</string>
 
 </resources>

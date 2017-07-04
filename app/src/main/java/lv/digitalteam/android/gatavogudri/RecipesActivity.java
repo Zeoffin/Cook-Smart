@@ -6,31 +6,19 @@ import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.*;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 
 public class RecipesActivity extends AppCompatActivity {
 
-    /*
-
-    TODO: Pielikt button clicked efektu:
-    https://stackoverflow.com/questions/17145615/using-image-in-a-android-button-with-effects
-    vai
-    GOOGLE: Android button clicked effect
-
-    TODO: SATAISIT FILTRĒSANU
-
-    */
-
-
-
     ImageView backRecipes;
     ImageView addRecipes;
     RecipesDBManager dbManager;
+    AdView adView;
 
     BaseAdapter baseAdapter;
     ListView recipesList;
@@ -38,6 +26,8 @@ public class RecipesActivity extends AppCompatActivity {
     ArrayList<String> recipeId = new ArrayList<>();
     ArrayList<String> recipeTitle = new ArrayList<>();
     ArrayList<String> recipeDesc = new ArrayList<>();
+    ArrayList<String> recipeIngr = new ArrayList<>();
+    ArrayList<String> recipePrep = new ArrayList<>();
     ArrayList<Bitmap> recipeImage = new ArrayList<>();
 
     @Override
@@ -45,11 +35,17 @@ public class RecipesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
 
+        //Admob and firebase
+        MobileAds.initialize(this, "ca-app-pub-9573430590084189~2808728113");
+        adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
         recipesList = (ListView) findViewById(R.id.recipesList);
 
         dbManager = new RecipesDBManager(this);
 
-        DbBitmapUtility dbBitmapUtility = new DbBitmapUtility();
+        final DbBitmapUtility dbBitmapUtility = new DbBitmapUtility();
 
         Cursor cursor = dbManager.getAll();
 
@@ -66,6 +62,8 @@ public class RecipesActivity extends AppCompatActivity {
             recipeId.add(cursor.getString(cursor.getColumnIndex("id")));
             recipeTitle.add(cursor.getString(cursor.getColumnIndex("title")));
             recipeDesc.add(cursor.getString(cursor.getColumnIndex("description")));
+            recipeIngr.add(cursor.getString(cursor.getColumnIndex("ingredients")));
+            recipePrep.add(cursor.getString(cursor.getColumnIndex("preperations")));
             recipeImage.add(dbBitmapUtility.getImage(cursor.getBlob(cursor.getColumnIndex("image"))));
 
         }
@@ -75,9 +73,24 @@ public class RecipesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                //TODO: UPDATE
+                String idIntent = recipeId.get(i);
+                String titleIntent = recipeTitle.get(i);
+                String descIntent = recipeDesc.get(i);
+                String ingrIntent = recipeIngr.get(i);
+                String prepIntent = recipePrep.get(i);
+
+                Bitmap imgIntent = recipeImage.get(i);
+                byte[] imgArray = dbBitmapUtility.getBytes(imgIntent);
 
                 Intent intent = new Intent(getApplicationContext(), AddRecipeActivity.class);
+
+                intent.putExtra("id", idIntent);
+                intent.putExtra("title", titleIntent);
+                intent.putExtra("description", descIntent);
+                intent.putExtra("ingredients", ingrIntent);
+                intent.putExtra("preperations", prepIntent);
+                intent.putExtra("image", imgArray);
+
                 startActivity(intent);
 
             }
@@ -107,11 +120,19 @@ public class RecipesActivity extends AppCompatActivity {
     }
 
 
-    //Refresh listview
+    //Refresh listview un nonemt extras
     @Override
     protected void onRestart() {
 
         super.onRestart();
+
+        getIntent().removeExtra("id");
+        getIntent().removeExtra("title");
+        getIntent().removeExtra("description");
+        getIntent().removeExtra("ingredients");
+        getIntent().removeExtra("preperations");
+        getIntent().removeExtra("image");
+
         finish();
         startActivity(getIntent());
 

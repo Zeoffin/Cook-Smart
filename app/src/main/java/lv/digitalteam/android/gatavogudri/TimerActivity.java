@@ -2,7 +2,6 @@ package lv.digitalteam.android.gatavogudri;
 
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
